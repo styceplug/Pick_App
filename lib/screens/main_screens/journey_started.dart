@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pick_app/utils/app_constants.dart';
 
 class JourneyStartedScreen extends StatefulWidget {
   const JourneyStartedScreen({super.key});
@@ -10,6 +11,13 @@ class JourneyStartedScreen extends StatefulWidget {
 class _JourneyStartedScreenState extends State<JourneyStartedScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppConstants.getPngAsset('map-mock2')),
+        ),
+      ),
+      child: Scaffold(),
+    );
   }
 }

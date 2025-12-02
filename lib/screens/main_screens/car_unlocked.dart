@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pick_app/utils/colors.dart';
 import 'package:pick_app/utils/dimensions.dart';
 
+import '../../routes/routes.dart';
 import '../../utils/app_constants.dart';
 
 class CarUnlockedScreen extends StatefulWidget {
@@ -119,19 +121,34 @@ class _CarUnlockedScreenState extends State<CarUnlockedScreen> {
             SizedBox(height: Dimensions.height30),
             Align(
               alignment: AlignmentGeometry.center,
-              child: Container(
-                height: Dimensions.height100*1.5,
-                width: Dimensions.width100*1.5,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.primaryColor
+              child: InkWell(
+                onTap: (){
+                  Get.toNamed(AppRoutes.journeyStartedScreen);
+                },
+                child: Container(
+                  height: Dimensions.height100 * 1.5,
+                  width: Dimensions.width100 * 1.5,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.primaryColor,
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    'GO',
+                    style: TextStyle(
+                      fontSize: Dimensions.font23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-                alignment: Alignment.center,
-                child: Text('GO',style: TextStyle(fontSize: Dimensions.font23,fontWeight: FontWeight.w600),),
               ),
             ),
             SizedBox(height: Dimensions.height30),
-            Text('By continuing, you agree to our Terms and have read our Policies'),
+            Text(
+              'By continuing, you agree to our Terms and have read our Policies',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: Dimensions.font15),
+            ),
           ],
         ),
       ),

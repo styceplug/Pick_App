@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pick_app/utils/dimensions.dart';
 
+import '../../utils/app_constants.dart';
+
 class CarUnlockedScreen extends StatefulWidget {
   const CarUnlockedScreen({super.key});
 
@@ -38,9 +40,17 @@ class _CarUnlockedScreenState extends State<CarUnlockedScreen> {
             SizedBox(height: Dimensions.height50),
             Row(
               children: [
-
+                Image.asset(
+                  AppConstants.getPngAsset('drive-icon'),
+                  height: Dimensions.height10 * 2.9,
+                ),
+                SizedBox(width: Dimensions.width10),
+                Text(
+                  'Drive Responsibly',
+                  style: TextStyle(fontSize: Dimensions.font20,fontWeight: FontWeight.w600),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

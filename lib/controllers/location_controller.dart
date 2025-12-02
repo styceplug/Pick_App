@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:pick_app/routes/routes.dart';
+import 'package:pick_app/utils/app_constants.dart';
 import 'package:uuid/uuid.dart';
 
 class LocationController extends GetxController {
@@ -15,7 +16,7 @@ class LocationController extends GetxController {
   var uuid = const Uuid();
   String _sessionToken = '123456';
   // TODO: REPLACE THIS WITH YOUR ACTUAL API KEY
-  final String _googleApiKey = "AIzaSyBHCvfuITDTbiNlpKh6mN75mt2o_eqTYow";
+  final String _googleApiKey = AppConstants.googleApiKey;
 
   @override
   void onInit() {

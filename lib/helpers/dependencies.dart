@@ -33,5 +33,5 @@ Future<void> init() async {
 
   //controllers
   Get.lazyPut(() => AppController(appRepo: Get.find()));
-  Get.lazyPut(() => LocationController());
+  Get.put(LocationController(), permanent: true);
 }

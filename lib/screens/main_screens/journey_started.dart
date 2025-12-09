@@ -29,6 +29,11 @@ class _JourneyStartedScreenState extends State<JourneyStartedScreen> {
               fit: BoxFit.cover,
             ),
           ),
+          Positioned(
+            left: Dimensions.width100 * 1.55,
+            top: Dimensions.height100 * 1.8,
+            child: Image.asset(AppConstants.getPngAsset('car-icon')),
+          ),
           Column(
             children: [
               CustomAppBar(

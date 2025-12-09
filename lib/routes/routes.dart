@@ -8,6 +8,12 @@ import 'package:pick_app/screens/main_screens/home_screen.dart';
 import 'package:pick_app/screens/main_screens/journey_completed.dart';
 import 'package:pick_app/screens/main_screens/journey_started.dart';
 import 'package:pick_app/screens/main_screens/map_screen.dart';
+import 'package:pick_app/screens/side_menu/help_faq_screen.dart';
+import 'package:pick_app/screens/side_menu/kyc_verification_screen.dart';
+import 'package:pick_app/screens/side_menu/profile_screen.dart';
+import 'package:pick_app/screens/side_menu/support_screen.dart';
+import 'package:pick_app/screens/side_menu/trips_screen.dart';
+import 'package:pick_app/screens/side_menu/wallet_screen.dart';
 import 'package:pick_app/screens/splash_screens/introduction_screen.dart';
 
 import '../screens/splash_screens/no_internet_screen.dart';
@@ -31,6 +37,14 @@ class AppRoutes{
   static const String endTripScreen = '/end-trip-screen';
   static const String journeyCompletedScreen = '/journey-completed-screen';
   static const String journeyStartedScreen = '/journey-started-screen';
+
+  //side-menu
+  static const String profileScreen = '/profile-screen';
+  static const String helpFaqScreen = '/help-faq-screen';
+  static const String kycVerificationScreen = '/kyc-verification-screen';
+  static const String supportScreen = '/support-screen';
+  static const String tripsScreen = '/trips-screen';
+  static const String walletScreen = '/wallet-screen';
 
 
 
@@ -129,6 +143,49 @@ static final routes = [
     transition: Transition.fadeIn,
   ),
 
+
+  GetPage(
+    name: helpFaqScreen,
+    page: () {
+      return HelpFaqScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: kycVerificationScreen,
+    page: () {
+      return KycVerificationScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: profileScreen,
+    page: () {
+      return ProfileScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: supportScreen,
+    page: () {
+      return SupportScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: tripsScreen,
+    page: () {
+      return TripsScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: walletScreen,
+    page: () {
+      return WalletScreen();
+    },
+    transition: Transition.fadeIn,
+  ),
 
 
 

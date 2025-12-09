@@ -38,12 +38,9 @@ class _DurationScreenState extends State<DurationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      drawer: CustomDrawer(
-      ),
+      drawer: CustomDrawer(),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: Dimensions.height20,
-        ),
+        padding: EdgeInsets.symmetric(vertical: Dimensions.height20),
         child: Column(
           children: [
             CustomAppBar(
@@ -57,7 +54,7 @@ class _DurationScreenState extends State<DurationScreen> {
             Text(
               'How long will you use the car?',
               style: TextStyle(
-                fontSize: Dimensions.font20,
+                fontSize: Dimensions.font22,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -65,35 +62,39 @@ class _DurationScreenState extends State<DurationScreen> {
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: Dimensions.width20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: CustomTextField(
-                        controller: durationController,
-                        hintText: 'Set the duration',
-                        maxLines: 1,
-                        textColor: Colors.white,
-                        keyboardType: TextInputType.number,
-                        borderRadius: BorderRadius.circular(Dimensions.radius30),
-                        backgroundColor: AppColors.accentColor),
-                  ),
-                  SizedBox(width: Dimensions.width20),
-                  if (durationController.text.isEmpty)
-                    Text('Hours'),
-                  if (durationController.text.isNotEmpty)
-                    CustomButton(
-                      text: 'Continue',
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.mapScreen);
-                      },
-                      padding: EdgeInsets.symmetric(
-                        vertical: Dimensions.height10,
-                        horizontal: Dimensions.width10,
-                      ),
-                      backgroundColor: Colors.white,
-                      borderRadius: BorderRadius.circular(Dimensions.radius30),
-                    )
-                ],
+              child: CustomTextField(
+                controller: durationController,
+                hintText: 'Set the duration',
+                maxLines: 1,
+                textColor: Colors.white,
+                keyboardType: TextInputType.number,
+                borderRadius: BorderRadius.circular(Dimensions.radius30),
+                backgroundColor: AppColors.accentColor,
+                suffixIcon:
+                    durationController.text.isNotEmpty
+                        ? Padding(
+                          padding: EdgeInsets.only(right: Dimensions.width15),
+                          child: InkWell(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.mapScreen);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: Dimensions.width5,
+                                vertical: Dimensions.height5,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.white,
+                              ),
+                              child: Icon(
+                                Icons.arrow_upward_rounded,
+                                color: AppColors.black,
+                              ),
+                            ),
+                          ),
+                        )
+                        : SizedBox.shrink(),
               ),
             ),
             SizedBox(height: Dimensions.height20),

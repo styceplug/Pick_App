@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 import 'package:pick_app/utils/app_constants.dart';
 import 'package:pick_app/utils/colors.dart';
 
+import '../routes/routes.dart';
 import '../utils/dimensions.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -39,27 +41,43 @@ class CustomDrawer extends StatelessWidget {
             ),
             SizedBox(height: Dimensions.height50),
 
-            buildDrawerItem(icon: 'wallet-icon', text: 'Wallet', onTap: () {}),
+            buildDrawerItem(icon: 'wallet-icon', text: 'Wallet', onTap: () {
+              Get.toNamed(AppRoutes.walletScreen);
+            }),
             buildDrawerItem(
               icon: 'profile-icon',
               text: 'Profile',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.profileScreen);
+              },
             ),
             buildDrawerItem(
               icon: 'kyc-icon',
               text: 'KYC Verification',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.kycVerificationScreen);
+              },
             ),
-            buildDrawerItem(icon: 'trips-icon', text: 'Trips', onTap: () {}),
+            buildDrawerItem(
+              icon: 'trips-icon',
+              text: 'Trips',
+              onTap: () {
+                Get.toNamed(AppRoutes.tripsScreen);
+              },
+            ),
             buildDrawerItem(
               icon: 'support-icon',
               text: 'Support',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.supportScreen);
+              },
             ),
             buildDrawerItem(
               icon: 'faq-icon',
               text: 'Help and FAQs',
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.helpFaqScreen);
+              },
             ),
             SizedBox(height: Dimensions.height50),
             Text(
@@ -79,6 +97,7 @@ class CustomDrawer extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: AppColors.primaryColor,
                   ),
+                  child: Image.asset(AppConstants.getPngAsset('dp-image')),
                 ),
                 SizedBox(width: Dimensions.width10),
                 Text(

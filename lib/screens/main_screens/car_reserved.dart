@@ -42,7 +42,7 @@ class _CarReservedScreenState extends State<CarReservedScreen> {
                     ),
                     SizedBox(width: Dimensions.width5),
                     Text(
-                      'ATTO 3',
+                      'E2',
                       style: TextStyle(
                         fontSize: Dimensions.font17,
                         color: AppColors.white,
@@ -73,6 +73,7 @@ class _CarReservedScreenState extends State<CarReservedScreen> {
                     ),
                   ],
                 ),
+                SizedBox(height: Dimensions.height70),
                 Image.asset(AppConstants.getPngAsset('atto3')),
                 SizedBox(height: Dimensions.height20),
                 Container(

@@ -23,7 +23,7 @@ class _JourneyCompletedScreenState extends State<JourneyCompletedScreen> {
         width: Dimensions.screenWidth,
         padding: EdgeInsets.symmetric(
           horizontal: Dimensions.width20,
-          vertical: Dimensions.height20,
+          // vertical: Dimensions.height20,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,6 +31,7 @@ class _JourneyCompletedScreenState extends State<JourneyCompletedScreen> {
             CustomAppBar(
               chatTextColor: Colors.transparent,
               chatContainerColor: Colors.transparent,
+              imageColor: AppColors.white,
             ),
             SizedBox(height: Dimensions.height20),
             Text(
@@ -42,8 +43,11 @@ class _JourneyCompletedScreenState extends State<JourneyCompletedScreen> {
             ),
             SizedBox(height: Dimensions.height20),
             Image.asset(
-              AppConstants.getPngAsset('car'),
-              height: Dimensions.height100 * 1.6,
+              AppConstants.getPngAsset('destination'),
+              height: Dimensions.height100 * 1.7,
+              width: Dimensions.screenWidth,
+              fit: BoxFit.fitHeight,
+              color: Color(0XFFF2F2F2).withOpacity(0.9),
             ),
             SizedBox(height: Dimensions.height20),
             Text(
@@ -184,7 +188,7 @@ class _JourneyCompletedScreenState extends State<JourneyCompletedScreen> {
                     ),
                   ),
                   Text(
-                    'Wallet Balance',
+                    'Moov Money Flooz',
                     style: TextStyle(
                       fontSize: Dimensions.font15,
                       fontWeight: FontWeight.w500,

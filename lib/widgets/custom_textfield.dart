@@ -97,15 +97,15 @@ class CustomTextField extends StatelessWidget {
         // Apply the effectiveRadius to all border states
         border: OutlineInputBorder(
           borderRadius: effectiveRadius,
-          borderSide: BorderSide(color: borderColor),
+          // borderSide: BorderSide(color: borderColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: effectiveRadius,
-          borderSide: BorderSide(color: enabledBorderColor),
+          // borderSide: BorderSide(color: enabledBorderColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: effectiveRadius,
-          borderSide: BorderSide(color: focusColor),
+          // borderSide: BorderSide(color: focusColor),
         ),
       ),
     );

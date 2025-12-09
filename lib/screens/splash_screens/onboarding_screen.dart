@@ -59,7 +59,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             //apple
             CustomButton(
               text: 'Continue with Apple',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoutes.introductionScreen);
+              },
               backgroundColor: AppColors.white,
               icon: Image.asset(
                 AppConstants.getPngAsset('apple-icon'),
@@ -71,7 +73,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             //google
             CustomButton(
               text: 'Continue with Google',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoutes.introductionScreen);
+              },
               backgroundColor: AppColors.accentColor,
               icon: Image.asset(
                 AppConstants.getPngAsset('google-icon'),
@@ -129,7 +133,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     width: Dimensions.width15,
                                   ),
                                   Text(
-                                    'Togo (+238)',
+                                    'Togo (+228)',
                                     style: TextStyle(
                                       color: AppColors.grey4,
                                       fontSize: Dimensions.font18,
@@ -167,7 +171,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           SizedBox(height: Dimensions.height20),
                           CustomButton(
                             text: 'Continue with Apple',
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.introductionScreen);
+
+                            },
                             backgroundColor: AppColors.white,
                             icon: Image.asset(
                               AppConstants.getPngAsset('apple-icon'),
@@ -178,7 +185,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           SizedBox(height: Dimensions.height20),
                           CustomButton(
                             text: 'Continue with Google',
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.introductionScreen);
+
+                            },
                             backgroundColor: AppColors.accentColor,
                             icon: Image.asset(
                               AppConstants.getPngAsset('google-icon'),
@@ -193,8 +203,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             backgroundColor: AppColors.accentColor,
                             icon: Image.asset(
                               AppConstants.getPngAsset('mail-icon'),
-                              height: Dimensions.height10 * 1.8,
-                              width: Dimensions.width10 * 1.8,
+                              height: Dimensions.height10 * 2.5,
+                              width: Dimensions.width10 * 3,
                             ),
                           ),
                           SizedBox(height: Dimensions.height20),
@@ -292,7 +302,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           SizedBox(height: Dimensions.height20),
                           CustomButton(
                             text: 'Continue with Apple',
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.introductionScreen);
+
+                            },
                             backgroundColor: AppColors.white,
                             icon: Image.asset(
                               AppConstants.getPngAsset('apple-icon'),
@@ -303,7 +316,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           SizedBox(height: Dimensions.height20),
                           CustomButton(
                             text: 'Continue with Google',
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.introductionScreen);
+
+                            },
                             backgroundColor: AppColors.accentColor,
                             icon: Image.asset(
                               AppConstants.getPngAsset('google-icon'),
@@ -533,7 +549,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                                   width: Dimensions.width15,
                                                 ),
                                                 Text(
-                                                  'Togo (+238)',
+                                                  'Togo (+228)',
                                                   style: TextStyle(
                                                     color: AppColors.grey4,
                                                     fontSize: Dimensions.font18,

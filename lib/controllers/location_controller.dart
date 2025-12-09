@@ -15,21 +15,21 @@ class LocationController extends GetxController {
 
   var uuid = const Uuid();
   String _sessionToken = '123456';
-  // TODO: REPLACE THIS WITH YOUR ACTUAL API KEY
   final String _googleApiKey = AppConstants.googleApiKey;
+  var destinationName = ''.obs;
 
   @override
   void onInit() {
     super.onInit();
     searchController = TextEditingController();
 
-    searchController.addListener(() {
-      _onSearchChanged();
-    });
+    searchController.addListener(_onSearchChanged);
   }
 
   @override
   void onClose() {
+    _debounce?.cancel();
+    searchController.removeListener(_onSearchChanged);
     searchController.dispose();
     super.onClose();
   }
@@ -53,7 +53,7 @@ class LocationController extends GetxController {
     }
 
     final String url =
-        "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$query&key=$_googleApiKey&sessiontoken=$_sessionToken&components=country:ng|country:tg";
+        "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$query&key=$_googleApiKey&sessiontoken=$_sessionToken&components=country:tg";
 
     try {
       isLoading.value = true;
@@ -69,21 +69,43 @@ class LocationController extends GetxController {
           print("Status: ${json['status']}");
         }
       }
-    } catch (e,s) {
+    } catch (e, s) {
       print("Error fetching maps data: $e,$s");
     } finally {
       isLoading.value = false;
     }
   }
 
-  void onPlaceSelected(String placeDescription, String placeId) {
-    searchController.text = placeDescription;
+  void setDestination(String name) {
+    destinationName.value = name;
+  }
 
+  void clearSearch() {
+    if (!isClosed) {
+      searchController.clear();
+      predictionList.clear();
+      _sessionToken = uuid.v4();
+    }
+  }
+
+  void onPlaceSelected(String placeDescription, String placeId) {
+    if (isClosed) return;
+
+    searchController.text = placeDescription;
     predictionList.clear();
 
     _sessionToken = uuid.v4();
+    setDestination(placeDescription);
 
     print("User selected Place ID: $placeId");
+    print("User selected Place ID: $placeDescription");
+
     Get.toNamed(AppRoutes.durationScreen);
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      if (!isClosed) {
+        searchController.clear();
+      }
+    });
   }
 }
